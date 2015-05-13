@@ -1903,7 +1903,7 @@ void loop() {
 //	axisPID[YAW] =  PTerm + ITerm;
 
 #elif PID_CONTROLLER == 2 // alexK
-	PIDControllers.ReWrite(errorGyroI);
+	PIDControllers.AlexK(errorGyroI);
 //#define GYRO_I_MAX 256
 //#define ACC_I_MAX 256
 //	prop = min(max(abs(rcCommand[PITCH]), abs(rcCommand[ROLL])), 500); // range [0;500]
