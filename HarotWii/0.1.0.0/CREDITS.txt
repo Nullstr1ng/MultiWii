@@ -1,0 +1,3 @@
+I give all the credits to the MultiWii developer and all its programmers who share their codes to make the MultiWii a great flight controller software.
+
+Please read the CREDITS.txt in MultiWii folder.
