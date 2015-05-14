@@ -21,7 +21,10 @@ HarotWii is a 100% MultiWii 2.4 version with some additional features such as:
 
 5. Support for MultiWii Mobile Control for Windows Phone.
 	This has new MSP called MSP_SUPRESS_DATA_FROM_RX = 150
- Once enabled in Windows Phone application, it will suppress all data coming in from your receiver so you can use the application in Windows Phone to control the quad with its virtual joystick with 4 AUX channels
+ Once enabled in Windows Phone application, it will suppress all data coming in from your receiver so you can use the application in Windows Phone to control the quad with its virtual joystick with 4 AUX channels.
+	Here's the sample video https://youtu.be/tptUuW6d01U
+	blog: http://jaysonsblog.azurewebsites.net/post/multiwii-mobile-control-for-windows-phone
+	discussion: http://www.multiwii.com/forum/viewtopic.php?f=8&t=6322&sid=78edcfaf125c4a9f48736237c399bf0b
 
 6. Can skip GYRO calibration at startup
 	Make sure to calibrate the GYRO after you update the firmware.
