@@ -127,7 +127,7 @@
       //#define CRIUS_LITE      			// Crius MultiWii Lite
       //#define CRIUS_SE					// Crius MultiWii SE
       //#define CRIUS_SE_v2_0   			// Crius MultiWii SE 2.0 with MPU6050, HMC5883 and BMP085
-	  //#define CRIUS_SE_v2_0   			// Crius MultiWii SE 2.0 with MPU6050, HMC5883 and BMP085
+	  //#define RCTIMER_CRIUS_SE_v2_0		// Crius MultiWii SE 2.0 with MPU6050, HMC5883 and MS561101BA
       //#define OPENLRSv2MULTI  			// OpenLRS v2 Multi Rc Receiver board including ITG3205 and ADXL345
       //#define BOARD_PROTO_1   			// with MPU6050 + HMC5883L + MS baro
       //#define BOARD_PROTO_2   			// with MPU6050 + slave  MAG3110 + MS baro
