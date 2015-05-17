@@ -46,7 +46,11 @@ void PIDControllersClass::One(int16_t errorAngleI[2], int16_t errorGyroI[3], int
 
 		if (f.ANGLE_MODE || f.HORIZON_MODE) { // axis relying on ACC
 			// 50 degrees max inclination
+#if GPS
 			errorAngle = constrain(rc + GPS_angle[axis], -500, +500) - att.angle[axis] + conf.angleTrim[axis]; //16 bits is ok here
+#else
+			errorAngle = constrain(rc, -500, +500) - att.angle[axis] + conf.angleTrim[axis]; //16 bits is ok here
+#endif
 
 			// todo
 			// autotune
@@ -116,7 +120,11 @@ void PIDControllersClass::AlexK(int32_t errorGyroI[3]) {
 		//-----Get the desired angle rate depending on flight mode
 		if ((f.ANGLE_MODE || f.HORIZON_MODE) && axis<2) { // MODE relying on ACC
 			// calculate error and limit the angle to 50 degrees max inclination
+#if GPS
 			errorAngle = constrain((rcCommand[axis] << 1) + GPS_angle[axis], -500, +500) - att.angle[axis] + conf.angleTrim[axis]; //16 bits is ok here
+#else
+			errorAngle = constrain((rcCommand[axis] << 1), -500, +500) - att.angle[axis] + conf.angleTrim[axis]; //16 bits is ok here
+#endif
 		}
 		if (axis == 2) {//YAW is always gyro-controlled (MAG correction is applied to rcCommand)
 			AngleRateTmp = (((int32_t) (conf.yawRate + 27) * rcCommand[2]) >> 5);
@@ -203,7 +211,7 @@ void PIDControllersClass::ReWrite(int32_t errorGyroI[3]) {
 			AngleRateTmp = (((int32_t) (rate + 27) * rcCommand[2]) >> 5);
 		}
 		else {
-#ifdef GPS
+#if GPS
 			errorAngle = constrain(2 * rcCommand[axis] + GPS_angle[axis], -500, +500) - att.angle[axis] + conf.angleTrim[axis];
 #else
 			errorAngle = constrain(2 * rcCommand[axis], -500, +500) - att.angle[axis] + conf.angleTrim[axis];
@@ -266,4 +274,5 @@ void PIDControllersClass::LuxFloat(int32_t errorGyroI[3]) {
 }
 
 PIDControllersClass PIDControllers;
+
 

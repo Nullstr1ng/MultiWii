@@ -187,7 +187,7 @@ const uint8_t boxids[] PROGMEM = {// permanent IDs associated to boxes. This way
 #define THR_CE  (3<<(2*THROTTLE))
 #define THR_HI  (2<<(2*THROTTLE))
 
-#if defined(INFLIGHT_ACC_CALIBRATION)
+#if defined(INFLIGHT_PID_TUNING)
 #define AUX2_LO  (1<<(AUX2))
 #define AUX2_CE  (3<<(AUX2))
 #define AUX2_HI  (2<<(AUX2))
