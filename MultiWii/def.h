@@ -1245,11 +1245,13 @@
 #if defined(RCTIMER_CRIUS_v2_AIOP)
   #define MPU6050
   #define HMC5883
-  #define MS561101BA
+  // #define MS561101BA /* diabled for the mean time because it's causing I2C error */
   #define ACC_ORIENTATION(X, Y, Z)  {imu.accADC[ROLL]  = -X; imu.accADC[PITCH]  = -Y; imu.accADC[YAW]  =  Z;}
   #define GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] =  Y; imu.gyroADC[PITCH] = -X; imu.gyroADC[YAW] = -Z;}
   #define MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  =  X; imu.magADC[PITCH]  =  Y; imu.magADC[YAW]  = -Z;}
   
+  //#undef INTERNAL_I2C_PULLUPS 
+  //#define I2C_SPEED 400000L         //400kHz fast mode
   //#define MS561101BA_ADDRESS 0x76
 #endif
 
@@ -1660,10 +1662,10 @@
 /**************************************************************************************/
 
 #if defined(ADXL345) || defined(BMA020) || defined(BMA180) || defined(BMA280) || defined(MMA7455) || defined(ADCACC) || defined(LIS3LV02) || defined(LSM303DLx_ACC) || defined(MPU6050) || defined(LSM330) || defined(MMA8451Q)
-  #if USE_ACC
-	#define ACC 1
+  #if defined(USE_ACC)
+	   #define ACC 1
   #else
-	#define ACC 0
+	   #define ACC 0
   #endif
 #else
   #define ACC 0
