@@ -213,6 +213,11 @@
        * Check motors order and directions of motors rotation for matching with new front point!  Uncomment only one option! */
       //#define SENSORS_TILT_45DEG_RIGHT        // rotate the FRONT 45 degres clockwise
       //#define SENSORS_TILT_45DEG_LEFT         // rotate the FRONT 45 degres counterclockwise
+	  
+	  /* use Accelerometer */
+	  /* disable it to go to complete Acro. */
+	  /* loop time decreases if this is disabled, which is good */
+	  // #define USE_ACC
 
 
 /*************************************************************************************************/

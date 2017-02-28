@@ -1660,7 +1660,11 @@
 /**************************************************************************************/
 
 #if defined(ADXL345) || defined(BMA020) || defined(BMA180) || defined(BMA280) || defined(MMA7455) || defined(ADCACC) || defined(LIS3LV02) || defined(LSM303DLx_ACC) || defined(MPU6050) || defined(LSM330) || defined(MMA8451Q)
-  #define ACC 1
+  #if USE_ACC
+	#define ACC 1
+  #else
+	#define ACC 0
+  #endif
 #else
   #define ACC 0
 #endif
